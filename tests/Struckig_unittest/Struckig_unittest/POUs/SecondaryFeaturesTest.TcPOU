@@ -12,7 +12,8 @@ END_VAR]]></Declaration>
       <ST><![CDATA[Test_AtTime();
 Test_AtTime1();
 Test_AtTime1_2();
-Test_DurationDiscretization();
+Test_DurationDiscretization_TimeSync();
+Test_DurationDiscretization_NoSync();
 Test_EnabledDof();
 Test_FirstStateAtTime();
 Test_IndependentMinDurations();
@@ -181,8 +182,46 @@ AssertEquals_LREAL(5.0, newPosition, 1E-4, Message:='No calculation with AtTime1
 TEST_FINISHED();]]></ST>
       </Implementation>
     </Method>
-    <Method Name="Test_DurationDiscretization" Id="{96b06b61-943e-49d9-869c-f7c2aca9f7ba}">
-      <Declaration><![CDATA[METHOD Test_DurationDiscretization
+    <Method Name="Test_DurationDiscretization_NoSync" Id="{1a09cedd-2980-4d40-a4e3-eae01e6189f7}">
+      <Declaration><![CDATA[METHOD Test_DurationDiscretization_NoSync
+VAR_INST
+  otg : Struckig.Otg(0.01, 3) := (
+    CurrentPosition :=     [ 0.0, 0.0, 0.0 ],
+    TargetPosition :=      [ 1.0, -3.0, 2.0 ],
+    TargetVelocity :=      [ 0.2, 0.2, 0.2 ],    
+    MaxVelocity :=         [ 1.0, 1.0, 1.0 ],
+    MaxAcceleration :=     [ 2.0, 2.0, 2.0 ],
+    MaxJerk :=             [ 1.8, 2.4, 2.0 ],
+    Discretization := DiscretizationType.Discrete,
+    Synchronization := SynchronizationType.None
+  ); 
+END_VAR
+VAR
+  result : Struckig.TrajectoryState;
+  busy : Struckig.TrajectoryState := Struckig.TrajectoryState.Busy;
+  NewSection : INT;
+  NewPosition, NewVelocity, NewAcceleration, NewJerk, values : ARRAY[0..Struckig.ParameterList.MaxDoFs] OF LREAL;
+  positionExtrema : Struckig.ProfileBound;
+  rtime, rvel, racc : LREAL;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[TEST('DurationDiscretization_NoSync');
+
+otg();
+result := otg.State;
+AssertEquals(busy, result, Message := '');
+AssertEquals_LREAL(otg.Duration, 4.5, 1E-6, Message := ''); 
+otg.AtTime(4.5, ADR(NewPosition), ADR(NewVelocity), ADR(NewAcceleration), ADR(NewJerk), ADR(NewSection));
+values[0] := 1.0;
+values[1] := -3.0;
+values[2] := 2.0;
+AssertArrayEquals_LREAL(values, NewPosition, 1E-6, '');
+
+TEST_FINISHED();]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Test_DurationDiscretization_TimeSync" Id="{96b06b61-943e-49d9-869c-f7c2aca9f7ba}">
+      <Declaration><![CDATA[METHOD Test_DurationDiscretization_TimeSync
 VAR_INST
   otg : Struckig.Otg(0.01, 3) := (
     CurrentPosition :=     [ 0.0, 0.0, 0.0 ],
@@ -203,7 +242,7 @@ VAR
   rtime, rvel, racc : LREAL;
 END_VAR]]></Declaration>
       <Implementation>
-        <ST><![CDATA[TEST('DurationDiscretization');
+        <ST><![CDATA[TEST('DurationDiscretization_TimeSync');
 
 otg();
 result := otg.State;

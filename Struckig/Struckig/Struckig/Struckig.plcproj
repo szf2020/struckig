@@ -9,7 +9,7 @@
     <WriteProductVersion>false</WriteProductVersion>
     <GenerateTpy>false</GenerateTpy>
     <Name>Struckig</Name>
-    <ProgramVersion>3.1.4024.12</ProgramVersion>
+    <ProgramVersion>3.1.4026.18</ProgramVersion>
     <Application>{1841ee32-fed0-4829-8f70-f65d9f9aec48}</Application>
     <TypeSystem>{09e0364c-c348-4b68-870a-c9ca33970027}</TypeSystem>
     <Implicit_Task_Info>{0a935299-cf6d-42b1-b1e2-0a7768a12bcf}</Implicit_Task_Info>
@@ -18,7 +18,7 @@
     <LibraryReferences>{f4bffdbd-5758-46b1-8be5-022517971003}</LibraryReferences>
     <Released>false</Released>
     <Title>Struckig</Title>
-    <ProjectVersion>0.14.0.0</ProjectVersion>
+    <ProjectVersion>0.15.5.0</ProjectVersion>
     <DefaultNamespace>Struckig</DefaultNamespace>
     <Author>Stefan Besler and contributers</Author>
     <Company>Stefan Besler</Company>

@@ -9,14 +9,14 @@
     <WriteProductVersion>false</WriteProductVersion>
     <GenerateTpy>false</GenerateTpy>
     <Name>Struckig_unittest</Name>
-    <ProgramVersion>3.1.4024.12</ProgramVersion>
+    <ProgramVersion>3.1.4026.18</ProgramVersion>
     <Application>{1d6bfceb-94e5-46b9-91cf-cbf08054802b}</Application>
     <TypeSystem>{df13ae81-3c35-4a8e-ab18-af82038fbbe8}</TypeSystem>
     <Implicit_Task_Info>{5dcdf2fd-35a7-4889-a66b-f60a6cc06840}</Implicit_Task_Info>
     <Implicit_KindOfTask>{23a670f4-2417-4917-907e-f416baaaec8d}</Implicit_KindOfTask>
     <Implicit_Jitter_Distribution>{58f48993-e77e-4536-bff7-b0d34be7acb8}</Implicit_Jitter_Distribution>
     <LibraryReferences>{604fede9-7b95-4a71-aceb-a9436682d543}</LibraryReferences>
-    <ProjectVersion>0.14.0.0</ProjectVersion>
+    <ProjectVersion>0.15.5.0</ProjectVersion>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="PlcTask.TcTTO">
@@ -150,6 +150,11 @@
         </Parameter>
       </Parameters>
     </PlaceholderReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PlaceholderResolution Include="Struckig">
+      <Resolution>Struckig, 0.15.5.0 (Stefan Besler)</Resolution>
+    </PlaceholderResolution>
   </ItemGroup>
   <ProjectExtensions>
     <PlcProjectOptions>

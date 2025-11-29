@@ -6,12 +6,32 @@
       "name": "Struckig",
       "plcs": [
         {
-          "version": "0.14.0.0",
-          "name": "Struckig",
+          "version": "0.15.5.0",
           "distributor-name": "Stefan Besler",
-          "type": "Library"
+          "name": "Struckig",
+          "type": "Library",
+          "frameworks": {},
+          "packages": [],
+          "references": {},
+          "repositories": [],
+          "bindings": {},
+          "patches": {
+            "platform": {},
+            "argument": {},
+            "license": {}
+          },
+          "description": "",
+          "icon-file": "",
+          "project-url": "",
+          "display-name": "",
+          "authors": "",
+          "entitlement": "",
+          "license": "",
+          "license-file": "",
+          "license-tmc-file": ""
         }
       ]
     }
-  ]
+  ],
+  "directories": null
 }

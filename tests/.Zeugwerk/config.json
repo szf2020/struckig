@@ -6,7 +6,7 @@
 	  "name": "Struckig_unittest",
 	  "plcs": [
 		{
-          "version": "0.14.0.0",
+          "version": "0.15.5.0",
           "name": "Struckig_unittest",
           "type": "Application",
           "frameworks": {},
@@ -21,7 +21,7 @@
               "distributor-name": "www.tcunit.org"
             },
             {
-              "version": "0.14.0.0",
+              "version": "0.15.5.0",
               "repository": "bot",
               "name": "Struckig",
               "branch": "main",
