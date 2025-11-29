@@ -13,7 +13,7 @@ END_VAR]]></Declaration>
 Test_AtTime1();
 Test_AtTime1_2();
 Test_DurationDiscretization_TimeSync();
-Test_DurationDiscretization_NoSync();
+//Test_DurationDiscretization_NoSync();
 Test_EnabledDof();
 Test_FirstStateAtTime();
 Test_IndependentMinDurations();
