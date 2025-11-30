@@ -846,6 +846,11 @@ THEN
   control_limiting := SEL(limitingDirection = ProfileDirection.Up, _inp_min_acceleration[limitingDof], MaxAcceleration[limitingDof]);
 END_IF
 
+IF ABS(scale_limiting) < Constants.Epsilon
+THEN
+  RETURN;
+END_IF
+
 FOR dof:=0 TO _dofsEnd
 DO
   IF _inp_per_dof_synchronization[dof] <> SynchronizationType.Phase
